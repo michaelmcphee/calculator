@@ -133,12 +133,16 @@ void line() {
     double slopetwo;
     double yone;
     double ytwo;
-    cout << "Enter slopes and y-intercepts with spaces in between\n";
+    cout << "Enter slopes and y-intercepts with spaces in between (M1, B1, M2, B2)\n";
     cin >> slopeone >>yone >>slopetwo >>ytwo;
     double x = (-yone+ytwo)/(slopeone-slopetwo);
     double y = x*slopeone + yone;
-    cout << "Point of intersection is (" << x <<"," << y << ")";
-
+    if (slopeone=slopetwo) {
+        cout << "Try again idiot\n"; 
+        line();
+    } else { 
+        cout << "Point of intersection is (" << x <<"," << y << ")";}
+    
 }
 
 int main() {
