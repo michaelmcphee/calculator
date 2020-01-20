@@ -2,18 +2,19 @@
 #include <cmath>
 #include <math.h>
 using namespace std;
-double A;
-double B;
-double C;
+
 string quadratics;
 string calculator;
 string bigboy;
 
 void roots()
 {
-	double Bsquared = (B *B);
-	double P = Bsquared - 4 *A * C;
-	double discriminant = sqrt(P);
+	double A;
+	double B;
+	double C;
+	cout << "Enter A B C values with spaces\n";
+	cin >> A >> B >> C;
+	double discriminant = sqrt(B *B - 4 *A *C);
 	double T = (-B + discriminant) / (2 *A);
 	double H = (-B - discriminant) / (2 *A);
 	if (discriminant < 0)
@@ -28,39 +29,60 @@ void roots()
 
 void vertex()
 {
-	double Bsquared = (B *B);
-	double P = Bsquared - 4 *A * C;
+	double A;
+	double B;
+	double C;
+	cout << "Enter A B C values with spaces\n";
+	cin >> A >> B >> C;
 	double xvertex = -B / 2 * A;
 	double yvertex = A *xvertex *xvertex + B *xvertex + C;
 	cout << "vertex is (" << xvertex << ", " << yvertex << ")";
 }
 
+void all()
+{
+	double A;
+	double B;
+	double C;
+	cout << "Enter A B C values with spaces\n";
+	cin >> A >> B >> C;
+	double xvertex = -B / 2 * A;
+	double yvertex = A *xvertex *xvertex + B *xvertex + C;
+	cout << "vertex is (" << xvertex << ", " << yvertex << ")\n";
+	double discriminant = sqrt(B *B - 4 *A *C);
+	double T = (-B + discriminant) / (2 *A);
+	double H = (-B - discriminant) / (2 *A);
+	if (discriminant < 0)
+	{
+		cout << "No roots";
+	}
+	else
+	{
+		cout << "Answers are " << T << ", " << H;
+	}
+}
+
 void quad()
 {
 
-	cout << "Enter values A B C (with spaces in between) and vertex, roots, or all\n";
-	cin >> A >> B >> C >> quadratics;
+	cout << "Enter vertex, roots, or all\n";
+	cin >> quadratics;
 	if (quadratics == "vertex")
 	{
-		cout << "finding vertex...";
 		vertex();
 	}
 	else if (quadratics == "roots")
 	{
-		cout << "finding roots...\n";
 		roots();
 	}
 	else if (quadratics == "all")
 	{
-		cout << "finding all...\n";
-		vertex();
-		cout << "\n";
-		roots();
+		all();
 	}
 	else
 	{
 		cout << "try again idiot\n";
-		//   quad();
+		quad();
 	}
 }
 void add()
