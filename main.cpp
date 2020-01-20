@@ -139,12 +139,7 @@ void line() {
   cin >> slopeone >> yone >> slopetwo >> ytwo;
   double x = (-yone + ytwo) / (slopeone - slopetwo);
   double y = x * slopeone + yone;
-  if (slopeone = slopetwo) {
-    cout << "Try again idiot\n";
-    line();
-  } else {
-    cout << "Point of intersection is (" << x << "," << y << ")";
-  }
+  cout << "Point of intersection is (" << x << "," << y << ")";
 
 }
 
