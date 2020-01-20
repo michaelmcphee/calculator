@@ -14,7 +14,6 @@ string bigboy;
 
 void roots() {
   double Bsquared = (B * B);
-  double fourAC = (4 * A * C);
   double P = Bsquared - 4 * A * C;
   double discriminant = sqrt(P);
   double T = (-B + discriminant) / (2 * A);
@@ -28,11 +27,8 @@ void roots() {
 
 void vertex() {
   double Bsquared = (B * B);
-  double fourAC = (4 * A * C);
   double P = Bsquared - 4 * A * C;
   double discriminant = sqrt(P);
-  double root1 = (-B + discriminant) / (2 * A);
-  double root2 = (-B - discriminant) / (2 * A);
   double xvertex = -B / 2 * A;
   double yvertex = A * xvertex * xvertex + B * xvertex + C;
   cout << "vertex is (" << xvertex << ", " << yvertex << ")";
